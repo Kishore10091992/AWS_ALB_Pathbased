@@ -1,4 +1,11 @@
 terraform {
+ cloud {
+  organization = "Terraform_learning_and_practise"
+
+  workspaces {
+   name = "AWS_ALB_Pathbased"
+  }
+ }
  required_providers {
    aws = {
      source = "hashicorp/aws"
@@ -94,7 +101,7 @@ resource "aws_security_group" "Ter_alb_sg" {
 
 resource "aws_key_pair" "Ter_alb_keypair" {
   key_name = "Ter_alb_keypair"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = var.alb_ec2_key
 
   tags = {
     Name = "Ter_alb_keypair"

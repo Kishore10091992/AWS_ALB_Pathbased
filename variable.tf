@@ -97,3 +97,11 @@ variable "alb_internal" {
  type = string
  default = "false"
 }
+
+variable "alb_ec2_key" {
+  description = "SSH public key for ALB EC2"
+  type        = string
+  default     = <<EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCNU3OC2E8Mkgbz/mVgn+sOR9MxDBf20QcR2ihY5C0EzaFlBX4IJ6S+ghWFQXPT21VE/a1+rcI50+ss8+6AbLapv9HqvG4zJ72l0jhXar3maI39WjaxCGb+kNzWzRHGdZd8CyTDTeU9BV3cAzkmzGnJZTJ73qZTI2oM0r/aN4qczZLmYF1yWaUq81pVoMNi/tccp6uCwd1ayE3QjgpsPBXmT9IYev05dA72EfQjLtiumdb98GTZA8mGE2qucIC5JcV4HoxCN8TmyBLcUN9Lk7XyrXo1Jfb1eCQ8roDzYjYm7wfY5f4A+rT+dpPbg29J/hNWW2bwakeDjCR2ibc/zoglmExfJewTUyunxucj5jdSGxv8D8gLGsK23YnviuFp22EqmQItDLaumHbixXyERRKlmGHVAzh6/PXl8ZGyRNSbkYTWbKLuEWKJ9TUCEo7XSDTaXAheVQABvW7CQ5qa0d3bXE2P+ke7hd0JfUxFowbb7hagZiOT8EMTKDjKQRHgm9yHjiNukqPQAVSsSWgTv6UgOIDNsgf1hVeWEfkbV1Qsr1FeePIs/cnO6Epi7ZBEMsPKLN/W1A+V2Q+m98aRJQBVKoNg9Mu3A0pWTO4cD9PLgFIMcbBcOiR1/gT5X08Opbl9/WpreL9kR4dDs3/fER8oAeLgFo2gJtABI8Nb5J+VIw== root@ip-192-168-0-88.ec2.internal
+EOF
+}
